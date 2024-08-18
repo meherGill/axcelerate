@@ -32,6 +32,12 @@ export const StyledListItem = styled.div<{type?: 'primary'}>`
   &:active {
     background-color: ${colors.secondary.active};
   }
+
+  & img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
 `
 export const StyledTextContainer = styled.div<{type?: 'primary' | 'secondary'}>`
   display: flex;

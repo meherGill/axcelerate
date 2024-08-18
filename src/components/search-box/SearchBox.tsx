@@ -5,12 +5,16 @@ import React from 'react'
 import { StyledSearchBox, StyledInput, StyledIconContainer } from './styles'
 
 type SearchBoxProps = {
+  /** Optional, value used for input if making it a controlled component */
   value?: string,
+
+  /** Optional, callback function when onChange is fired in the input element */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   [restOfProps: string]: any,
 }
 
-const SearchBox:React.FC<SearchBoxProps> = (props) => {
+/** Used for searching for users */
+const SearchBox = React.forwardRef<HTMLInputElement, SearchBoxProps>((props : SearchBoxProps, ref) => {
   return (
     <StyledSearchBox>
       <StyledIconContainer>
@@ -19,9 +23,10 @@ const SearchBox:React.FC<SearchBoxProps> = (props) => {
           src='searchIcon.svg'
           alt='searchIcon' />
       </StyledIconContainer>
-      <StyledInput {...props} placeholder='Search'/>
+      <StyledInput ref={ref} {...props} placeholder='Search'/>
     </StyledSearchBox> 
   )
-}
+})
 
+SearchBox.displayName = "Search Box"
 export default SearchBox
