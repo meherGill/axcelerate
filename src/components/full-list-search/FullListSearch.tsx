@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect, useMemo} from 'react'
 import SearchBox from '../search-box/SearchBox';
 import SectionList from '../section/section-list/SectionList';
 import Header from '../section/header/Header';
-import { ExpandWrapper } from './styles';
+import { ExpandWrapper, Wrapper } from './styles';
 
 type FullSearchListProps = {
   data: {
@@ -73,7 +73,7 @@ const FullListSearch:React.FC<FullSearchListProps> = ({data}) => {
   }
 
   return (
-    <div style={{width: '400px'}}>
+    <Wrapper>
       <SearchBox value={searchValue} onChange={handleSearch}/>
         {
           sectionHeadersArr.map((header) => {
@@ -83,7 +83,7 @@ const FullListSearch:React.FC<FullSearchListProps> = ({data}) => {
             )
           })
         }
-    </div>
+    </Wrapper>
   )
 }
 
