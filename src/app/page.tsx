@@ -27,6 +27,7 @@ export default function Home() {
       },
       {
         name: "Kranti",
+        imageSrc: "pic1.svg"
       },
     ]
   }

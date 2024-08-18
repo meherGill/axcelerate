@@ -39,6 +39,10 @@ const HeaderAndSection:React.FC<HeaderAndSectionProps> = ({header, listOfUsers})
     expandedWrapperRef.current!.style.transition = '0s all'
     calculatedHeightForList.current = sectionListRef.current!.offsetHeight;
     expandedWrapperRef.current!.style.height = `${calculatedHeightForList.current}px`;
+
+    if (!isExpanded){
+      expandedWrapperRef.current!.style.height = '0px'
+    }
   }, [listOfUsers])
   
   return (
