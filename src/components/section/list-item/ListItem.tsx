@@ -16,10 +16,13 @@ export type ListItemProps = {
 
   /** type is a string, because in future it can be extended to secondary / tertiary */
   type?: 'primary',
+
+  /** other props to be given to the div element, like style, data-testId */
+  [restOfProps: string]: any,
 }
 
 /**  Items used as tiles in a section */
-const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(({primaryText, secondaryText, imageSrc, type } : ListItemProps, ref) => {
+const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(({primaryText, secondaryText, imageSrc, type, ...restOfProps } : ListItemProps, ref) => {
   const textItemToRender = () => {
     if (!secondaryText){
       return <StyledTextContainer type={type}>{primaryText}</StyledTextContainer>
@@ -35,7 +38,7 @@ const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(({primaryText, 
   }
 
   return (
-    <StyledListItem type={type} ref={ref}>
+    <StyledListItem type={type} ref={ref} {...restOfProps}>
       <img alt='profile picture' src={`${imageSrc ? imageSrc : 'defaultProfilePicture.svg'}`}></img>
       <span>{textItemToRender()}</span>
     </StyledListItem>

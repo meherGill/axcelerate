@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {HeaderAndSection as HeaderAndSectionComponent } from "./FullListSearch";
+import {HeaderAndSection as HeaderAndSectionComponent } from "@components/full-list-search/FullListSearch";
 
 const meta = {
   title: 'Header and Section',

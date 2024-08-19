@@ -12,7 +12,7 @@ const SectionList = React.forwardRef<HTMLDivElement, SectionListProps>(({data}: 
   return (
     <StyledSectionList ref={ref}>
       {
-        data.map(({name, email, imageSrc}) => <ListItem key={`${email}`} primaryText={name} secondaryText={email} imageSrc={imageSrc}/>)
+        data.map(({name, email, imageSrc}) => <ListItem data-testid="list_item" key={`${name}__${email}`} primaryText={name} secondaryText={email} imageSrc={imageSrc}/>)
       }
     </StyledSectionList>
   )

@@ -55,7 +55,7 @@ export const HeaderAndSection:React.FC<HeaderAndSectionProps> = ({header, listOf
   return (
     <>
      <Header onClickHandler={handleHeaderClick} label={header}/>
-     <ExpandWrapper ref={expandedWrapperRef}>
+     <ExpandWrapper data-testid={`${header}_expandWrapper`} ref={expandedWrapperRef}>
       <SectionList ref={sectionListRef} data={listOfUsers}/>
     </ExpandWrapper>
     </>
@@ -83,7 +83,7 @@ const FullListSearch = React.forwardRef<HTMLDivElement, FullSearchListProps>(({d
 
   return (
     <Wrapper ref={ref}>
-      <SearchBox value={searchValue} onChange={handleSearch}/>
+      <SearchBox data-test-id="search-box" value={searchValue} onChange={handleSearch}/>
         {
           sectionHeadersArr.map((header) => {
             const listOfUsers = dataToShow[header];

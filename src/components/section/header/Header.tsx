@@ -21,7 +21,7 @@ const Header = React.forwardRef<HTMLButtonElement, HeaderProps>(({ label: text, 
       onClickHandler();
     }
   }
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(true)
   return (
     <StyledSectionHeader onClick={handleClick} ref={ref}>
       <span>{text}</span>

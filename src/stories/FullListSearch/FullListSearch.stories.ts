@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import FullListSearchComponent from "./FullListSearch";
+import FullListSearchComponent from "@components/full-list-search/FullListSearch";
 
 const meta = {
   title: 'Full List Search',
@@ -22,11 +22,11 @@ export const FullListSearch: Story = {
       'Attending': [
         {
           name: "Alex",
-          email: "a@123.com"
+          email: "alex@123.com"
         },
         {
           name: "Barry",
-          email: "b@123.com"
+          email: "bar@123.com"
         },
         {
           name: "Katherine",
@@ -34,8 +34,8 @@ export const FullListSearch: Story = {
       ],
       'Absent': [
         {
-          name: "Arise",
-          email: "ar@123.com"
+          name: "Aleanase",
+          email: "alean@123.com"
         },
         {
           name: "Bathlamore",
